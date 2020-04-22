@@ -8,5 +8,5 @@ func main() {
 	//sample.Run52()
 	//sample.RunLcp01()
 	//sample.Run1342()
-	sample.Run1281()
+	sample.Run1365()
 }
