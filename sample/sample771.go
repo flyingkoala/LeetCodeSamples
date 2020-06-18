@@ -10,7 +10,7 @@ J 中的字母不重复，J 和 S中的所有字符都是字母。字母区�
 链接：https://leetcode-cn.com/problems/jewels-and-stones
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
-package sample
+package main
 
 import "fmt"
 

@@ -4,7 +4,7 @@
 @File : sample1295
 @Description: 给你一个整数数组 nums，请你返回其中位数为 偶数 的数字的个数。
 */
-package sample
+package main
 
 import (
 	"strconv"

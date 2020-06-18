@@ -20,7 +20,7 @@
 
 所有输入只包含小写字母 a-z 。
 */
-package sample
+package main
 func longestCommonPrefix(strs []string) string {
 	strNumber := len(strs)
 
