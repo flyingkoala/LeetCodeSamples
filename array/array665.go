@@ -35,21 +35,33 @@ func checkPossibility(nums []int) bool {
 			return true
 		}
 	}
-
-	mark:=0
 	flag:=0
 	for i:=0;i<len(nums)-1;i++{
-		if nums[i]<nums[i+1]{
-			flag=nums[i+1]-nums[i]
-		}
+		tmp:=nums[i]
+		//如果当前元素比下一个元素大
 		if nums[i]>nums[i+1]{
-			mark++
-		}
-	}
-	if mark>=2{
-		return false
-	}
+			//如果当前元素是第一个元素
+			if i==0 {
+				//当前元素值=下一个元素
+				nums[i]=nums[i+1]
+			}else{
+				//当前元素值=上一个元素
+				nums[i]=nums[i-1]
+			}
+			//修改了之后的当前元素继续比较下一个元素
+			if nums[i]>nums[i+1]{
+				//如果还比下一个元素大 把当前元素改回来 就修改下一个元素吧
+				nums[i] = tmp
+				nums[i+1]=tmp
 
+			}
+			flag++
+			if flag>=2{
+				return false
+			}
+		}
+
+	}
 	return true
 }
 
