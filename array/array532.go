@@ -25,11 +25,40 @@
 */
 package main
 
+import "fmt"
 
 func findPairs(nums []int, k int) int {
-
+	//使用map将数组数据过滤
+	mp:=map[int]int{}
+	for _,v:=range nums{
+		mp[v]=mp[v]+1
+	}
+	fmt.Println(mp)
+	count:=0
+	if k>0{
+		for key,_:=range mp{
+			if mp[key-k]>0{
+				count++
+			}
+			if mp[key+k]>0{
+				count++
+			}
+		}
+		count=count/2
+	}
+	if k<0{
+		return 0
+	}
+	if k ==0{
+		for key,_:=range mp {
+			if mp[key]>1{
+				count++
+			}
+		}
+	}
+	return count
 }
 
 func main(){
-
+	fmt.Println(findPairs([]int{1, 3, 4, 1, 5},0))
 }
