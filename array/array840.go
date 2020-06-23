@@ -43,15 +43,27 @@ func numMagicSquaresInside(grid [][]int) int {
 	count:=0
 	for i:=0;i<=heng-3;i++{
 		for j:=0;j<=zong-3;j++{
-			x1:=grid[i][j]+grid[i+1][j]+grid[i+2][j]
-			x2:=grid[i][j+1]+grid[i+1][j+1]+grid[i+2][j+1]
-			x3:=grid[i][j+2]+grid[i+1][j+2]+grid[i+2][j+2]
-			y1:=grid[i][j]+grid[i][j+1]+grid[i][j+2]
-			y2:=grid[i+1][j]+grid[i+1][j+1]+grid[i+1][j+2]
-			y3:=grid[i+2][j]+grid[i+2][j+1]+grid[i+2][j+2]
-			z1:=grid[i][j]+grid[i+1][j+1]+grid[i+2][j+2]
-			z2:=grid[i+2][j]+grid[i+1][j+1]+grid[i][j+2]
-			if x1==x2&&x1==x3&&x1==y1&&x1==y2&&x1==y3&&x1==z1&&x1==z2{
+			a:=grid[i][j]
+			b:=grid[i+1][j]
+			c:=grid[i+2][j]
+			d:=grid[i][j+1]
+			e:=grid[i+1][j+1]
+			f:=grid[i+2][j+1]
+			g:=grid[i][j+2]
+			h:=grid[i+1][j+2]
+			i:=grid[i+2][j+2]
+
+			if e!=5{
+				continue
+			}
+			if e==5&&a==5&&i==5{
+				continue
+			}
+			if a>9||b>9||c>9||d>9||e>9||f>9||g>9||h>9||i>9{
+				continue
+			}
+			sum:=a+b+c
+			if sum==d+e+f&&sum==g+h+i&&sum==a+d+g&&sum==b+e+h&&sum==e+f+i&&sum==a+e+i&&sum==c+e+g{
 				count++
 			}
 		}
